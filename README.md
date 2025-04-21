@@ -1,3 +1,4 @@
+# HoverTeam
 # 📊 Director Dashboard
 
 ## Description
@@ -9,11 +10,6 @@ This is a simple **Director Dashboard** that allows the director to interact wit
 - Smooth animations for interactions
 - Form with CRUD operations
 - Table display of data
-
-## Technologies Used
-- HTML5
-- CSS3 (with animations)
-- JavaScript
 
 ## 📸 Screenshot
 
@@ -34,12 +30,6 @@ This module secures access to the student management system. The administrator s
 - Access control logic
 - Responsive and user-friendly design
 
-## Technologies Used
-- HTML5 / CSS3
-- JavaScript
-- Backend language (e.g., PHP / Node.js)
-- Database (e.g., MySQL / MongoDB)
-
 ## 📸 Screenshot
 
 | Login Interface |
@@ -58,17 +48,21 @@ A simple CRUD web application that allows administrators to manage student recor
 - Display students in a styled table
 - Responsive and clean design
 
-## Technologies Used
-- PHP (backend)
-- HTML5 / CSS3
-- JavaScript (UX / interactivity)
-- MySQL (database)
-
 ## 📸 Screenshot
 
 | Admin Interface |
 |-----------------|
 | ![Admin Dashboard](./screenshots/admin_dashboard.png) |
+
+---
+
+## 🧰 Technologies Used
+
+- **HTML5** / **CSS3**
+- **JavaScript** (DOM manipulation, UX)
+- **PHP** (backend logic for admin area)
+- **MySQL** (data storage)
+- **Responsive Design** principles
 
 ---
 
