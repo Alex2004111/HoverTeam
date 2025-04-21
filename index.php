@@ -7,10 +7,16 @@ $emailError = "";
 $deleteError = "";
 $emailRegex = '/^[a-zA-Z0-9]+([-._]?[a-zA-Z0-9])*@{1}[a-zA-Z0-9]+([-._]?[a-zA-Z0-9])*[a-zA-Z0-9]{2,8}$/';
 
-if (!isset($_SESSION['users'])) {
-  $_SESSION['users'] = [];
-}
+if (!isset($_SESSION['user'])) {
+  header('Location: ../login/login.php');
+  exit;
+};
+if ($_SERVER['REQUEST_METHOD'] && isset($_POST['action'])) {
 
+  if ($_POST['action'] == 'logout') {
+      include('../login/logout.php');
+    }
+}
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id'])) {
   $id = $_POST['id'] ?? '';
   $nom = $_POST['nom'] ?? '';
@@ -45,8 +51,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id'])) {
     if ($_POST['action'] == 'update') {
       include('update.php');
     }
-    
   }
+  
 }
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['idd'])) {
   if (empty($deleteError)) {
@@ -64,6 +70,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['idd'])) {
 <head>
   <meta charset="UTF-8">
   <title>Form and Table Layout</title>
+  <link rel= 'icon' href = "https://cdn-icons-png.flaticon.com/512/6915/6915669.png" >
   <style>
     body {
       margin: 0;
@@ -173,11 +180,35 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['idd'])) {
       height: 150px; 
       opacity: 1;
     }
+
+    [value = 'logout'] {
+      background-color: #e74c3c; 
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    [value = 'logout']:hover {
+      background-color: #c0392b;
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
   </style>
 </head>
 
 <body>
-
+  <form method = "post">
+   <button name ='action' value='logout'>Log out</button> 
+  </form>
   <div class="container">
     <div class="form-section">
       <img src="https://cdn-icons-png.flaticon.com/512/6915/6915669.png">
