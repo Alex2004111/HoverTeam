@@ -70,4 +70,4 @@ A simple CRUD web application that allows administrators to manage student recor
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/your-username/your-dashboard-repo.git
+git clone https://github.com/Alex2004111/HoverTeam.git
