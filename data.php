@@ -1,9 +1,12 @@
 <?php
+$dsn = 'mysql:host=localhost;dbname=student;port=3306;charset=utf8';
+$user = 'root';
+$pass = '';
+
 try {
-    $pdo = new PDO("mysql:host=localhost;port=3306;dbname=gestion;charset=utf8", "root", "");
-    echo "Database connected successfully<br>";
+    $db = new PDO($dsn, $user, $pass);
+    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
-    echo "Connection failed: " . $e->getMessage();
-    exit;
-}   
+    die("Database Connection Failed: " . $e->getMessage());
+}
 ?>
